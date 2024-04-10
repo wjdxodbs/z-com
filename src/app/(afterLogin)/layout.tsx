@@ -1,11 +1,19 @@
 import React from "react";
+import styles from "./layout.module.css";
 
 const AfterLoginLayout = ({
   children,
 }: Readonly<{ children: React.ReactNode }>) => {
   return (
-    <div>
-      애프터 로그인 레이아웃 <div>{children}</div>
+    <div className={styles.container}>
+      <header className={styles.leftSectionWrapper}>
+        <section className={styles.leftSection}></section>
+      </header>
+      <div className={styles.rightSectionWrapper}>
+        <div className={styles.rightSectionInner}></div>
+        <main className={styles.main}>{children}</main>
+        <section className={styles.rightSection}></section>
+      </div>
     </div>
   );
 };
